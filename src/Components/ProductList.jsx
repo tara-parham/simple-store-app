@@ -4,7 +4,7 @@ import { CartContext } from "../context/CartContext";
 export default function ProductList() {
   //state
   const [products, setProducts] = useState([]);
-  const [inputData, setInputData] = useState({ name: "" });
+  const [inputData, setInputData] = useState({ name: "", price: "" });
   //context
   const { addToCart } = useContext(CartContext);
   //functions
@@ -23,7 +23,7 @@ export default function ProductList() {
     }
     setProducts([...products, inputData]);
     addToCart(inputData);
-    setInputData({ name: "" });
+    setInputData({ name: "", price: "" });
   }
   //return
   return (
@@ -32,9 +32,17 @@ export default function ProductList() {
         <input
           className="border border-1 px-2"
           name="name"
-          placeholder="Product"
+          placeholder="Product's name"
           type="text"
           value={inputData.name}
+          onChange={handleChange}
+        />
+        <input
+          className="border border-1 px-2"
+          name="price"
+          placeholder="Product's price"
+          type="number"
+          value={inputData.price}
           onChange={handleChange}
         />
         <button
@@ -46,8 +54,8 @@ export default function ProductList() {
       </form>
       <div>
         <ul>
-          {products.map((item) => (
-            <li>
+          {products.map((item, index) => (
+            <li key={index}>
               {item.name}
               <button
                 className="m-2 px-1 border border-rose-950 text-rose-800"
@@ -59,7 +67,6 @@ export default function ProductList() {
           ))}
         </ul>
       </div>
-      <OrderForm />
     </section>
   );
 }
