@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import OrderForm from "./OrderForm";
+import { CartContext } from "../context/CartContext";
 export default function ProductList() {
   //state
   const [products, setProducts] = useState([]);
   const [inputData, setInputData] = useState({ name: "" });
+  //context
+  const { addToCart } = useContext(CartContext);
   //functions
   function handleChange(e) {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
@@ -19,6 +22,7 @@ export default function ProductList() {
       return;
     }
     setProducts([...products, inputData]);
+    addToCart(inputData);
     setInputData({ name: "" });
   }
   //return
