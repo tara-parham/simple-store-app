@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
 export default function Cart() {
-  const { cartItems } = useContext(CartContext);
+  const { cartItems, removeFromCart } = useContext(CartContext);
   const total = cartItems.reduce((sum, item) => sum + Number(item.price), 0);
   return (
     <div>
@@ -10,6 +10,12 @@ export default function Cart() {
         {cartItems.map((item, index) => (
           <li key={index}>
             {item.name}, {item.price}
+            <button
+              className="m-2 px-1 border border-rose-950 text-rose-800"
+              onClick={() => removeFromCart(item.name)}
+            >
+              Delete
+            </button>
           </li>
         ))}
       </ul>
