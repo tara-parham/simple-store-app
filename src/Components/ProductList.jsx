@@ -11,10 +11,6 @@ export default function ProductList() {
   function handleChange(e) {
     setInputData({ ...inputData, [e.target.name]: e.target.value });
   }
-  function deleteProduct(pname) {
-    const newList = products.filter((item) => pname !== item.name);
-    setProducts(newList);
-  }
   function hanldeSubmit(e) {
     e.preventDefault();
     if (inputData.name.trim() === "") {
@@ -52,21 +48,6 @@ export default function ProductList() {
           Add
         </button>
       </form>
-      <div>
-        <ul>
-          {products.map((item, index) => (
-            <li key={index}>
-              {item.name}
-              <button
-                className="m-2 px-1 border border-rose-950 text-rose-800"
-                onClick={() => deleteProduct(item.name)}
-              >
-                Delete
-              </button>
-            </li>
-          ))}
-        </ul>
-      </div>
     </section>
   );
 }
