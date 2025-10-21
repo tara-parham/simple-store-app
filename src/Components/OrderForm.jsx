@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { CartContext } from "../context/CartContext";
 
 export default function OrderForm() {
   //state
@@ -8,6 +9,8 @@ export default function OrderForm() {
     phone: "",
   });
   const [error, setError] = useState({ name: "", address: "", phone: "" });
+  //context
+  const { setCartItems } = useContext(CartContext);
   //function
   function handleChange(e) {
     setUserInfo({ ...userInfo, [e.target.name]: e.target.value });
@@ -30,6 +33,7 @@ export default function OrderForm() {
         address: "",
         phone: "",
       });
+      setCartItems([]);
     }
   }
   //return
