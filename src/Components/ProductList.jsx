@@ -29,7 +29,7 @@ export default function ProductList() {
           Please add the products
         </h2>
         <input
-          className="border border-2 border-teal-800 rounded py-1 px-2 mr-2 bg-teal-50"
+          className="border-2 border-teal-800 rounded py-1 px-2 mr-2 bg-teal-50"
           name="name"
           placeholder="Product's name"
           type="text"
@@ -37,7 +37,7 @@ export default function ProductList() {
           onChange={handleChange}
         />
         <input
-          className="border border-2 border-teal-800 rounded py-1 px-2 mx-2 bg-teal-50"
+          className="border-2 border-teal-800 rounded py-1 px-2 mx-2 bg-teal-50"
           name="price"
           placeholder="Product's price"
           type="number"
@@ -46,7 +46,7 @@ export default function ProductList() {
         />
         <button
           type="submit"
-          className="border border-2 border-teal-600 bg-teal-200 rounded py-1 px-2 mx-2 cursor-pointer"
+          className="border-2 border-teal-600 bg-teal-200 rounded py-1 px-2 mx-2 cursor-pointer"
         >
           Add
         </button>

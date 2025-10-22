@@ -7,7 +7,7 @@ export default function Cart() {
   return (
     <div>
       <p className="my-2 font-bold text-violet-800">Shopping Cart Items</p>
-      <ul className="border border-2 border-violet-900 bg-violet-50 w-100 mb-3">
+      <ul className="border-2 border-violet-900 bg-violet-50 w-100 mb-3">
         {cartItems.map((item, index) => (
           <li key={index} className="p-2">
             - {item.name}: {item.price}

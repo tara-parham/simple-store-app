@@ -45,7 +45,7 @@ export default function OrderForm() {
         Please enter your information after your cart is full.
       </p>
       <input
-        className="border border-2 border-blue-950 bg-blue-50 rounded py-1 px-2 mr-2"
+        className="border-2 border-blue-950 bg-blue-50 rounded py-1 px-2 mr-2"
         type="text"
         name="name"
         value={userInfo.name}
@@ -53,7 +53,7 @@ export default function OrderForm() {
         onChange={handleChange}
       />
       <input
-        className="border border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
+        className="border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
         type="text"
         name="address"
         value={userInfo.address}
@@ -62,7 +62,7 @@ export default function OrderForm() {
       />
 
       <input
-        className="border border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
+        className="border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
         type="tel"
         name="phone"
         value={userInfo.phone}
@@ -70,7 +70,7 @@ export default function OrderForm() {
         onChange={handleChange}
       />
       <button
-        className="border border-2 border-blue-800 bg-blue-200 rounded py-1 px-2 mx-2 cursor-pointer"
+        className="border-2 border-blue-800 bg-blue-200 rounded py-1 px-2 mx-2 cursor-pointer"
         type="submit"
       >
         Sumbit
