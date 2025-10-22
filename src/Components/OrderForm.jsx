@@ -34,46 +34,54 @@ export default function OrderForm() {
         phone: "",
       });
       setCartItems([]);
+      alert("You submit your shop successfully");
     }
   }
   //return
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="mt-7">
+      <h2 className="font-bold text-blue-950 mb-1">User's Information</h2>
+      <p className="mb-3 text-blue-950">
+        Please enter your information after your cart is full.
+      </p>
       <input
-        className="border border-1 px-2 "
+        className="border border-2 border-blue-950 bg-blue-50 rounded py-1 px-2 mr-2"
         type="text"
         name="name"
         value={userInfo.name}
         placeholder="Your name"
         onChange={handleChange}
       />
-      {error.name && <strong className="text-red-600">{error.name}</strong>}
       <input
-        className="border border-1 px-2 mx-2"
+        className="border border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
         type="text"
         name="address"
         value={userInfo.address}
         placeholder="Your address"
         onChange={handleChange}
       />
-      {error.address && (
-        <strong className="text-red-600">{error.address}</strong>
-      )}
+
       <input
-        className="border border-1 px-2 mx-2"
+        className="border border-2 bg-blue-50 border-blue-950 rounded py-1 px-2 mx-2"
         type="tel"
         name="phone"
         value={userInfo.phone}
         placeholder="Your phone"
         onChange={handleChange}
       />
-      {error.phone && <strong className="text-red-600">{error.phone}</strong>}
       <button
-        className="px-1 border border-rose-950 text-rose-800"
+        className="border border-2 border-blue-800 bg-blue-200 rounded py-1 px-2 mx-2 cursor-pointer"
         type="submit"
       >
         Sumbit
       </button>
+      <p className="mt-2 mx-2">
+        {error.name && <strong className="text-red-600">{error.name}</strong>}
+        {error.address && (
+          <strong className="text-red-600">{error.address}</strong>
+        )}
+        {error.phone && <strong className="text-red-600">{error.phone}</strong>}
+      </p>
     </form>
   );
 }

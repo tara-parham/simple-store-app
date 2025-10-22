@@ -6,20 +6,21 @@ export default function Cart() {
   const total = cartItems.reduce((sum, item) => sum + Number(item.price), 0);
   return (
     <div>
-      <ul>
+      <p className="my-2 font-bold text-violet-800">Shopping Cart Items</p>
+      <ul className="border border-2 border-violet-900 bg-violet-50 w-100 mb-3">
         {cartItems.map((item, index) => (
-          <li key={index}>
-            {item.name}, {item.price}
+          <li key={index} className="p-2">
+            - {item.name}: {item.price}
             <button
-              className="m-2 px-1 border border-rose-950 text-rose-800"
+              className="m-2 px-1 border border-rose-950 text-rose-800 cursor-pointer bg-rose-50"
               onClick={() => removeFromCart(item.name)}
             >
               Delete
             </button>
           </li>
         ))}
+        <p className="p-2 font-bold">Total: {total.toLocaleString("en-US")}</p>
       </ul>
-      <p className="pb-3 pt-1">Total: {total.toLocaleString("en-US")}</p>
     </div>
   );
 }

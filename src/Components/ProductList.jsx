@@ -24,9 +24,12 @@ export default function ProductList() {
   //return
   return (
     <section>
-      <form onSubmit={hanldeSubmit}>
+      <form onSubmit={hanldeSubmit} className="mb-5">
+        <h2 className="font-bold mb-2 text-teal-800">
+          Please add the products
+        </h2>
         <input
-          className="border border-1 px-2"
+          className="border border-2 border-teal-800 rounded py-1 px-2 mr-2 bg-teal-50"
           name="name"
           placeholder="Product's name"
           type="text"
@@ -34,7 +37,7 @@ export default function ProductList() {
           onChange={handleChange}
         />
         <input
-          className="border border-1 px-2"
+          className="border border-2 border-teal-800 rounded py-1 px-2 mx-2 bg-teal-50"
           name="price"
           placeholder="Product's price"
           type="number"
@@ -43,7 +46,7 @@ export default function ProductList() {
         />
         <button
           type="submit"
-          className="m-2 px-1 border border-green-800 text-green-600"
+          className="border border-2 border-teal-600 bg-teal-200 rounded py-1 px-2 mx-2 cursor-pointer"
         >
           Add
         </button>
